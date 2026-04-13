@@ -3,17 +3,20 @@ import User from "./user.model.js"
 const PostSchema=new mongoose.Schema({
     title:{
         type:String,
-        required:true},
+        required:true
+    },
     content:{
         type:String,
-        required:true},
-    author:{
-      type:mongoose.Schema.Types.ObjectId,
-      ref:User,
-      required:true
+        required:true
     },
-    date:{type:Date,
-        default:Date.now}
+    category:{
+        type:String,
+        default:"general"
+    },
+    createAt:{
+        type:Date ,
+        default:Date.now
+    }
 })
 const Post=mongoose.model("Post",PostSchema)
 export default Post
