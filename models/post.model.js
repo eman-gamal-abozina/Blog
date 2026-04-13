@@ -13,6 +13,11 @@ const PostSchema=new mongoose.Schema({
         type:String,
         default:"general"
     },
+    comment:[{
+        text:{type:String},
+        postedBy:{type:String},
+        createdAt:{type:Date,default:Date.now}
+    }],
     createAt:{
         type:Date ,
         default:Date.now
